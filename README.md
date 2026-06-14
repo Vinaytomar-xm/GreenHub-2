@@ -33,7 +33,7 @@ GreenHub/
 └── frontend/
     ├── src/
     │   ├── pages/          ← All page components
-    │   ├── components/     ← Navbar, Background, etc.
+    │   ├── components/     ← Navbar, Background,cookieBanner etc.
     │   ├── context/        ← Auth + Notification contexts
     │   ├── api.js          ← Axios API client
     │   └── App.jsx
