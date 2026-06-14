@@ -2,9 +2,9 @@
 
 India's decentralized peer-to-peer green energy marketplace. Built with React + Express + MongoDB.
 
----
+# Live demo [click here](https://greenhub-frontend-coral.vercel.app/)
 
-## ✨ What's New in v3
+---
 
 - **Email Notifications** — Admin actions trigger automatic emails:
   - Producer registration approved/rejected → email to producer
@@ -12,7 +12,6 @@ India's decentralized peer-to-peer green energy marketplace. Built with React + 
   - Support ticket admin reply → email to user
 - **Cookie Authentication** — HTTP-only secure cookies alongside JWT (dual auth)
 - **Vercel Deployment Ready** — Full env config, `vercel.json` for both frontend and backend
-- **100% English** — All Hinglish text converted to English
 - **Mobile Responsive** — Grid layouts use `auto-fit` and `clamp()` throughout
 
 ---
