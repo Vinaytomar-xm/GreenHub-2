@@ -1,156 +1,254 @@
-# GreenHub — Renewable Energy Marketplace
+# ⚡ GreenHub — India's Renewable Energy Marketplace
 
-India's decentralized peer-to-peer green energy marketplace. Built with React + Express + MongoDB.
+<div align="center">
 
-# Live demo [click here](https://greenhub-frontend-coral.vercel.app/)
+![GreenHub Banner](https://img.shields.io/badge/GreenHub-Renewable%20Energy%20Marketplace-4ade80?style=for-the-badge&logo=leaflet&logoColor=white)
 
----
+**Buy & Sell Green Energy Directly — No Middlemen. No Broker Fees. 100% Green.**
 
-- **Email Notifications** — Admin actions trigger automatic emails:
-  - Producer registration approved/rejected → email to producer
-  - Buy request accepted/rejected → email to buyer
-  - Support ticket admin reply → email to user
-- **Cookie Authentication** — HTTP-only secure cookies alongside JWT (dual auth)
-- **Vercel Deployment Ready** — Full env config, `vercel.json` for both frontend and backend
-- **Mobile Responsive** — Grid layouts use `auto-fit` and `clamp()` throughout
+[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-greenhub--frontend--coral.vercel.app-4ade80?style=for-the-badge)](https://greenhub-frontend-coral.vercel.app)
+[![Backend API](https://img.shields.io/badge/🔧%20Backend%20API-Render-46E3B7?style=for-the-badge)](https://greenhub-backend.onrender.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Vinaytomar--xm-181717?style=for-the-badge&logo=github)](https://github.com/Vinaytomar-xm)
+
+</div>
 
 ---
 
-## 🗂 Project Structure
+## 🌍 Live Demo
+
+| | Link |
+|---|---|
+| 🌐 **Frontend (Vercel)** | [https://greenhub-frontend-coral.vercel.app](https://greenhub-frontend-coral.vercel.app) |
+| 🔧 **Backend API (Render)** | [https://greenhub-backend.onrender.com](https://greenhub-backend.onrender.com) |
+| 🗄️ **Database** | MongoDB Atlas (ap-south-1, Mumbai) |
+
+### 🔐 Demo Credentials
+
+| Role | Email | Password |
+|---|---|---|
+| **Admin** | `admin@greenhub.in` | `admin123` |
+| **User** | Register freely | Any password |
+
+---
+
+## ✨ Features
+
+- 🔆 **Sell Energy** — Register as a solar, wind, or biogas producer
+- 🛒 **Buy Energy** — Browse and send buy requests to producers
+- 🔄 **P2P Trading** — Direct peer-to-peer energy trades
+- 🤝 **Community** — Join micro-grids, co-ops, and energy clusters
+- 🗺️ **Energy Map** — Live energy producers map of India
+- 📊 **Dashboard** — Track your listings, requests, and trades
+- 💬 **Support** — Ticket-based support system
+- 🛡️ **Admin Panel** — Manage producers, buy requests, and support tickets
+- ✉️ **Email Notifications** — Auto email on approval/rejection via SendGrid
+- 🔒 **Auth** — JWT + Cookie-based authentication
+- 🍪 **Cookie Consent** — GDPR-style consent banner with Accept/Reject
+- 📱 **Mobile Responsive** — Hamburger menu below 768px
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-000?logo=vercel)
+
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=nodedotjs)
+![Express](https://img.shields.io/badge/Express-4-000?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb)
+![Render](https://img.shields.io/badge/Deployed-Render-46E3B7?logo=render)
+
+### Email
+![SendGrid](https://img.shields.io/badge/Email-SendGrid%20API-1A82E2?logo=sendgrid)
+
+---
+
+## 📁 Project Structure
 
 ```
 GreenHub/
 ├── backend/
 │   ├── src/
-│   │   ├── server.js      ← Express API, all routes
-│   │   ├── models.js      ← Mongoose schemas
-│   │   ├── middleware.js  ← JWT + cookie auth middleware
-│   │   └── email.js       ← Nodemailer email utility
+│   │   ├── server.js       # Express app, all API routes
+│   │   ├── models.js       # Mongoose schemas
+│   │   ├── middleware.js   # JWT auth middleware
+│   │   └── email.js        # SendGrid email templates
 │   ├── .env.example
 │   ├── package.json
-│   └── vercel.json        ← Vercel serverless config
+│   └── render.yaml
 │
 └── frontend/
     ├── src/
-    │   ├── pages/          ← All page components
-    │   ├── components/     ← Navbar, Background,cookieBanner etc.
-    │   ├── context/        ← Auth + Notification contexts
-    │   ├── api.js          ← Axios API client
-    │   └── App.jsx
+    │   ├── pages/
+    │   │   ├── PrivacyPolicy.jsx   # Cookie & data usage policy
+    │   │   └── ...                # 13+ pages
+    │   ├── components/
+    │   │   ├── CookieBanner.jsx    # GDPR-style consent banner
+    │   │   ├── Navbar.jsx
+    │   │   └── ...
+    │   ├── context/        # AuthContext, NotificationContext
+    │   └── api.js          # Axios config
     ├── .env.example
-    ├── vite.config.js
-    └── vercel.json         ← SPA routing config
+    └── vite.config.js
 ```
 
 ---
 
-## 🚀 Local Development
+## 🚀 Local Development Setup
 
-### 1. Backend Setup
+### Prerequisites
+- Node.js v18+
+- MongoDB (local or Atlas)
+- SendGrid account (free) for emails
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Vinaytomar-xm/GreenHub-backend.git
+```
+
+### 2. Backend Setup
 
 ```bash
 cd backend
-cp .env.example .env
-# Edit .env with your values (MongoDB URI, email credentials, etc.)
 npm install
+cp .env.example .env
+# Fill in your .env values
 npm run dev
-# → Runs on http://localhost:5000
 ```
 
-### 2. Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 cd frontend
-cp .env.example .env
-# No changes needed for local development
 npm install
+cp .env.example .env
+# Set VITE_API_URL=http://localhost:5000/api
 npm run dev
-# → Runs on http://localhost:3000
 ```
-
-### Default Admin Credentials
-- Email: `admin@greenhub.in`
-- Password: `admin123`
 
 ---
 
-## ⚙️ Environment Variables
+## 🔑 Environment Variables
 
 ### Backend `.env`
 
-| Variable       | Description                              | Example                              |
-|----------------|------------------------------------------|--------------------------------------|
-| `PORT`         | Server port                              | `5000`                               |
-| `NODE_ENV`     | Environment                              | `development` / `production`         |
-| `MONGO_URI`    | MongoDB connection string                | `mongodb+srv://...`                  |
-| `JWT_SECRET`   | Secret key for JWT signing               | `your_random_secret_here`            |
-| `FRONTEND_URL` | Frontend URL (for CORS)                  | `https://your-app.vercel.app`        |
-| `EMAIL_HOST`   | SMTP host                                | `smtp.gmail.com`                     |
-| `EMAIL_PORT`   | SMTP port                                | `587`                                |
-| `EMAIL_SECURE` | Use SSL (true for port 465)              | `false`                              |
-| `EMAIL_USER`   | SMTP username / email                    | `you@gmail.com`                      |
-| `EMAIL_PASS`   | SMTP password / App Password             | `xxxx xxxx xxxx xxxx`                |
-| `EMAIL_FROM`   | Sender name and address                  | `"GreenHub" <you@gmail.com>`         |
-
-> **Gmail tip:** Go to Google Account → Security → 2-Step Verification → App Passwords → generate one for "Mail".
+| Variable | Description | Example |
+|---|---|---|
+| `PORT` | Server port | `5000` |
+| `NODE_ENV` | Environment | `development` |
+| `MONGO_URI` | MongoDB connection string | `mongodb+srv://...` |
+| `JWT_SECRET` | JWT secret key | `your_secret_key` |
+| `FRONTEND_URL` | Frontend URL for CORS | `https://greenhub-frontend-coral.vercel.app` |
+| `SENDGRID_API_KEY` | SendGrid API key | `SG.xxxxxxxxxxxx` |
+| `EMAIL_FROM` | Verified sender email | `tomarvinaysingh70@gmail.com` |
 
 ### Frontend `.env`
 
-| Variable           | Description                               | Example                                    |
-|--------------------|-------------------------------------------|--------------------------------------------|
-| `VITE_API_URL`     | Backend API base URL (production only)    | `https://your-backend.vercel.app/api`      |
-| `VITE_BACKEND_URL` | Backend URL for Vite dev proxy            | `http://localhost:5000`                    |
+| Variable | Description | Example |
+|---|---|---|
+| `VITE_API_URL` | Backend API URL | `https://greenhub-backend.onrender.com/api` |
 
 ---
 
-## 🌐 Deploy to Vercel
+## 📧 Email Notifications
 
-### Step 1 — Deploy Backend
+Emails are sent via **SendGrid HTTP API** (port 443 — works on Render, since SMTP ports are blocked on the free plan):
 
-1. Push the `backend/` folder to a GitHub repo (or a subfolder)
-2. Go to [vercel.com](https://vercel.com) → New Project → Import repo
-3. Set **Root Directory** to `backend`
-4. Add all **Environment Variables** from the table above
-5. Deploy → note the URL, e.g. `https://greenhub-api.vercel.app`
-
-### Step 2 — Deploy Frontend
-
-1. Go to Vercel → New Project → Import same (or different) repo
-2. Set **Root Directory** to `frontend`
-3. Add environment variables:
-   - `VITE_API_URL` = `https://greenhub-api.vercel.app/api`
-4. Deploy → your app is live!
-
-### Step 3 — Update Backend FRONTEND_URL
-
-Go back to your backend Vercel project → Settings → Environment Variables:
-- Update `FRONTEND_URL` to your frontend Vercel URL (e.g. `https://greenhub.vercel.app`)
-- Redeploy the backend
+| Trigger | Recipient | Email Type |
+|---|---|---|
+| Producer approved/rejected | Producer | Listing status update |
+| Buy request accepted/rejected | Buyer | Request status update |
+| Support ticket replied | User | Admin reply notification |
 
 ---
 
-## 📧 Email Flow
+## 🍪 Cookie Consent
 
-| Action                        | Recipient     | Template                          |
-|-------------------------------|---------------|-----------------------------------|
-| Admin approves producer       | Producer      | ✅ Listing Approved email         |
-| Admin rejects producer        | Producer      | ❌ Listing Status Update email    |
-| Admin accepts buy request     | Buyer         | ✅ Buy Request Accepted email     |
-| Admin rejects buy request     | Buyer         | ❌ Buy Request Status Update email|
-| Admin replies to support ticket| Ticket owner | 💬 Support Team Reply email      |
+GreenHub uses a lightweight, GDPR-style cookie consent system — no third-party cookie libraries required.
+
+### How it works
+
+| Step | Behavior |
+|---|---|
+| First visit | `CookieBanner` checks `localStorage.cookieConsent` — if absent, banner slides up from the bottom after a short delay |
+| Accept | Stores `cookieConsent = "accepted"` in `localStorage`, banner dismisses |
+| Reject | Stores `cookieConsent = "rejected"` in `localStorage`, banner dismisses |
+| Repeat visit | If consent already exists in `localStorage`, banner never shows again |
+
+### Files
+
+| File | Purpose |
+|---|---|
+| `frontend/src/components/CookieBanner.jsx` | Reusable banner — fade-in/slide-up animation, Accept/Reject buttons, ARIA labels, keyboard accessible |
+| `frontend/src/pages/PrivacyPolicy.jsx` | Explains the `gh_token` authentication cookie, data collection, and security practices |
+
+### What it covers
+
+- Informs users about the **`gh_token`** HttpOnly authentication cookie (required for login — not affected by Accept/Reject)
+- No tracking or advertising cookies are used by GreenHub
+- Links to a dedicated **Privacy Policy** page (`/privacy-policy`)
+- Mounted globally in `App.jsx`, so it renders on every route
+
+> ℹ️ Rejecting cookies only affects future *optional* tracking — it does **not** log the user out, since `gh_token` is essential for authentication.
 
 ---
 
-## 🔐 Authentication
+## 🌐 Deployment
 
-The app uses **dual authentication**:
-1. **HTTP-only Cookie** (`gh_token`) — set by server on login, sent automatically with `credentials: 'include'`
-2. **Authorization Header** — `Bearer <token>` stored in `localStorage` as fallback
+### Backend → Render
 
-Both are verified in `middleware.js`. The token expires in **7 days**.
+1. Push code to GitHub
+2. **[render.com](https://render.com)** → **New +** → **Web Service**
+3. Connect `greenhub-backend` repo
+4. Build: `npm install` · Start: `node src/server.js`
+5. **Environment** tab → add all env variables
+6. Deploy → Render auto-generates the URL
+
+### Frontend → Vercel
+
+1. Push code to GitHub
+2. **[vercel.com](https://vercel.com)** → Import project
+3. Framework: **Vite** · Output: `dist`
+4. Add `VITE_API_URL=https://your-backend.onrender.com/api`
+5. Deploy → Redeploy after backend URL is ready
 
 ---
 
-## 📱 Mobile Responsive
+## 📸 Pages Overview
 
-All layouts use CSS Grid with `repeat(auto-fit, minmax(...))` and `clamp()` for font sizes, ensuring full responsiveness on all screen sizes without media queries.
+| Page | Route | Description |
+|---|---|---|
+| Home | `/` | Landing page with stats & how it works |
+| Marketplace | `/marketplace` | Browse all energy producers |
+| Sell Energy | `/sell-energy` | Multi-step producer registration |
+| Buy Energy | `/buy-energy` | Browse & send buy requests |
+| Trading | `/trading` | P2P energy trading |
+| Community | `/community` | Energy groups & micro-grids |
+| Energy Map | `/energy-map` | Live map of India |
+| Dashboard | `/dashboard` | User dashboard |
+| Support | `/support` | Ticket support system |
+| Admin Panel | `/admin` | Admin management panel |
+| Privacy Policy | `/privacy-policy` | Cookie & data usage policy |
+
+---
+
+## 👨‍💻 Author
+
+**Vinay Singh Tomar**
+- GitHub: [@Vinaytomar-xm](https://github.com/Vinaytomar-xm)
+
+---
+
+## 📄 License
+
+MIT License — feel free to use and modify.
+
+---
+
+<div align="center">
+  Made with ❤️ Vinay Singh Tomar
+</div>
