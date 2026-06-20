@@ -241,13 +241,6 @@ GreenHub uses a lightweight, GDPR-style cookie consent system — no third-party
 **Vinay Singh Tomar**
 - GitHub: [@Vinaytomar-xm](https://github.com/Vinaytomar-xm)
 
----
-
-## 📄 License
-
-MIT License — feel free to use and modify.
-
----
 
 <div align="center">
   Made with ❤️ Vinay Singh Tomar
