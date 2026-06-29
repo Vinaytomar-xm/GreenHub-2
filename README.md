@@ -1,4 +1,4 @@
-# ⚡ GreenHub — India's Renewable Energy Marketplace
+# GreenHub — India's Renewable Energy Marketplace
 
 <div align="center">
 
